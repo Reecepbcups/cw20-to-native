@@ -13,6 +13,7 @@ sh script.sh
 # For forked support, contact 
 #- Discord: Reece#3307 / Twitter: @Reecepbcups_ 
 
+pip install -r requirements/requirements.txt
 python3 script2.py
 
 # Done! Double check balance.json looks right and then finally mint the tokens to their addresses

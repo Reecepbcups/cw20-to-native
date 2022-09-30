@@ -6,6 +6,9 @@
 # - Run the python script to sort through and get the exact balances, then outputs into an easy way to format for later
 # NOTE: This script will make MANY files in the directory it is run.
 
+# validate dependencies are installed
+command -v jq > /dev/null 2>&1 || { echo >&2 "jq not installed. More info: https://stedolan.github.io/jq/download/"; exit 1; }
+
 # switch to files current dir
 cd "$(dirname "$0")"
 
@@ -35,8 +38,12 @@ mkdir -p CW20s
 next_pag_key=""
 
 # Loop through until we dont have any more pages
-for i in {0..10}
-do
+
+# while loop
+
+# for i in {0..10}; do
+
+while true; do
     # get a random UUID for this file
     UUID=$(uuidgen)
     FILENAME="CW20s/cw20-$UUID.json"

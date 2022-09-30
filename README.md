@@ -19,3 +19,6 @@ python3 script2.py
 # Done! Double check balance.json looks right and then finally mint the tokens to their addresses
 sh factory_mint.sh
 ```
+
+### note
+You could also update the TOKEN_FACTORY_MINT_COMMAND (.env.example) to be a `simd add-genesis-account` command as well (If you want to move your CW20 to its own chain)

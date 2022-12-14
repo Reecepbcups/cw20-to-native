@@ -16,6 +16,8 @@ NEW_WALLET_PREFIX = os.getenv("NEW_WALLET_PREFIX", "juno")
 TOKEN_FACTORY_MINT_COMMAND = os.getenv("TOKEN_FACTORY_MINT_COMMAND", "eved tx tokenfactory mint-and-send-tokens {TOKEN_FACTORY_DENOM} {balance} {address} --node {NEW_CHAIN_NODE}")
 NEW_CHAIN_NODE = os.getenv("NEW_CHAIN_NODE", "http://localhost:26657")
 
+JUST_SNAPSHOT = os.getenv("JUST_SNAPSHOT", False)
+
 
 current_dir = os.path.dirname(os.path.realpath(__file__))
 CW20s = os.path.join(current_dir, 'CW20s')
@@ -76,8 +78,13 @@ for file in os.listdir(CW20s):
 
 # save balances to a file as JSON
 with open(os.path.join(current_dir, 'balances.json'), 'w') as f:
-    json.dump(balances, f)
+    balances = {k: v for k, v in sorted(balances.items(), key=lambda x: x[1], reverse=True)}
+    json.dump(balances, f, indent=2)
     print("Balances saved to balances.json. Total Value: {total_balances:.0f}")
+
+if JUST_SNAPSHOT:
+    print("Just snapshot per .env file, your file balances.json is done & sorted :)")
+    exit()
 
 # loop through balances
 output = []

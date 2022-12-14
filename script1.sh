@@ -38,11 +38,6 @@ mkdir -p CW20s
 next_pag_key=""
 
 # Loop through until we dont have any more pages
-
-# while loop
-
-# for i in {0..10}; do
-
 while true; do
     # get a random UUID for this file
     UUID=$(uuidgen)

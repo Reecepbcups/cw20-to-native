@@ -1,8 +1,9 @@
-## CW20 -> Native Denom
+# CW20 -> Native Denom
 
-This tool will allow you to convert a CW20 -> a chains native denomination via a x/tokenfactory module in the SDK.
+This tool will allow you to take a CW20 snapshot AND/OR convert a CW20 -> a chain's native denomination via an x/tokenfactory module.
 
-### Usage
+## Usage
+
 ```bash
 cp .env.example .env
 # edit .env with the data you want for your CW20 convert.
@@ -20,5 +21,6 @@ python3 script2.py
 sh factory_mint.sh
 ```
 
-### note
-You could also update the TOKEN_FACTORY_MINT_COMMAND (.env.example) to be a `simd add-genesis-account` command as well (If you want to move your CW20 to its own chain)
+## Note
+
+You could also update the TOKEN_FACTORY_MINT_COMMAND (.env.example) to be a `simd add-genesis-account` command as well (If you want to move your CW20 to its own chain).

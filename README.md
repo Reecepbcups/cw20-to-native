@@ -2,6 +2,9 @@
 
 This tool will allow you to take a CW20 snapshot AND/OR convert a CW20 -> a chain's native denomination via an x/tokenfactory module.
 
+**UPDATE** There is now a tokenfactory contract to handle this automatically for you -> https://github.com/CosmosContracts/tokenfactory-contracts
+YOu can leverage this with https://juno.reece.sh as well for the Dev & User migrations.
+
 ## Usage
 
 ```bash
